@@ -21,4 +21,7 @@ public:
     string& Haslo(Gracz* gracze);
     char WczytajZnak();
     char WczytajWybor(Gracz* gracze);
+    friend ostream& operator<<(ostream& output, const Gracz& gracze);
+    //
+
 };
