@@ -23,5 +23,4 @@ public:
     char WczytajWybor(Gracz* gracze);
     friend ostream& operator<<(ostream& output, const Gracz& gracze);
     //
-
 };

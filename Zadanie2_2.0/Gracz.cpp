@@ -169,7 +169,6 @@ void Gracz::Do_While(int& i, int& n, int maska[100], Gracz* gracze, int& sa_spol
         }
         if (zgadl)
         {
-            cout << "OK" << endl;
             gracze->Kasa(gracze, kolejka) += kwota * zgadl;
             cout << gracze[kolejka];
         }
@@ -223,7 +222,7 @@ void Gracz::Show_Invisible_Word(int maska[100], int& i, int& n, string& haslo)
 
 ostream& operator<<(ostream& output, const Gracz& gracze)
 {
-    output << endl << gracze.imie << "\033[1;32m " << gracze.kasa << "\033[0m";
+    output << "OK" << endl << endl << gracze.imie << "\033[1;32m " << gracze.kasa << "\033[0m";
     return output;
 }
 
