@@ -133,7 +133,7 @@ void Gracz::Do_While(int& i, int& n, int maska[100], Gracz* gracze, int& sa_spol
         }
         rezultat = "";
         i = rand() % 15;
-        if (gracze->KOLO(gracze, i) == 0)
+        if(gracze[i] == 0)
             rezultat = "Strata kolejki";
         if (gracze->KOLO(gracze, i) == -1)
             rezultat = "Bankrut";
@@ -224,6 +224,13 @@ ostream& operator<<(ostream& output, const Gracz& gracze)
 {
     output << "OK" << endl << endl << gracze.imie << "\033[1;32m " << gracze.kasa << "\033[0m";
     return output;
+}
+
+bool Gracz::operator==(int x)
+{
+    if (this->Kolo == 0)
+        return true;
+    return false;
 }
 
 //
