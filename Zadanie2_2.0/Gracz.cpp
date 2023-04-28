@@ -135,7 +135,7 @@ void Gracz::Do_While(int& i, int& n, int maska[100], Gracz* gracze, int& sa_spol
         i = rand() % 15;
         if(gracze[i] == 0)
             rezultat = "Strata kolejki";
-        if (gracze->KOLO(gracze, i) == -1)
+        if (gracze[i] == -1)
             rezultat = "Bankrut";
         if (rezultat != "")
             cout << rezultat;
@@ -144,9 +144,9 @@ void Gracz::Do_While(int& i, int& n, int maska[100], Gracz* gracze, int& sa_spol
             cout << "\033[1;34m" << gracze->KOLO(gracze, i) << "\033[0m" << endl;
             kwota = gracze->KOLO(gracze, i);
         }
-        if ((gracze->KOLO(gracze, i) == 0) || (gracze->KOLO(gracze, i) == -1))
+        if ((gracze[i] == 0) || (gracze[i] == -1))
         {
-            if (gracze->KOLO(gracze, i) == -1)
+            if (gracze[i] == -1)
                 gracze->Kasa(gracze, kolejka) = 0;
             kolejka = (kolejka + 1) % 3;
             suma = 1;
@@ -234,8 +234,10 @@ ostream& operator<<(ostream& output, string rezultat)
 
 bool Gracz::operator==(int x)
 {
-    if (this->Kolo == 0)
+    if (*this->Kolo == x)
+    {
         return true;
+    }
     return false;
 }
 
