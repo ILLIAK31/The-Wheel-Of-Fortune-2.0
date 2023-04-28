@@ -138,7 +138,7 @@ void Gracz::Do_While(int& i, int& n, int maska[100], Gracz* gracze, int& sa_spol
         if (gracze->KOLO(gracze, i) == -1)
             rezultat = "Bankrut";
         if (rezultat != "")
-            cout << "\033[1;31m" << rezultat << "\033[0m" << endl;
+            cout << rezultat;
         else
         {
             cout << "\033[1;34m" << gracze->KOLO(gracze, i) << "\033[0m" << endl;
@@ -223,6 +223,12 @@ void Gracz::Show_Invisible_Word(int maska[100], int& i, int& n, string& haslo)
 ostream& operator<<(ostream& output, const Gracz& gracze)
 {
     output << "OK" << endl << endl << gracze.imie << "\033[1;32m " << gracze.kasa << "\033[0m";
+    return output;
+}
+
+ostream& operator<<(ostream& output, string rezultat)
+{
+    output << "\033[1;31m" << rezultat << "\033[0m" << endl;
     return output;
 }
 
