@@ -9,9 +9,9 @@ using namespace std;
 
 void Gracz::Set_Name(Gracz* gracze)
 {
-    gracze[0].imie = "Bryanusz";
-    gracze[1].imie = "Jessica ";
-    gracze[2].imie = "Nepomucen";
+    gracze[0] = "Bryanusz";
+    gracze[1] = "Jessica ";
+    gracze[2] = "Nepomucen";
 }
 
 void Gracz::Read_File(vector<string>& hasla)
@@ -239,6 +239,12 @@ bool Gracz::operator==(int x)
         return true;
     }
     return false;
+}
+
+Gracz& Gracz::operator=(const string& s)
+{
+    this->imie = s;
+    return *this;
 }
 
 //
