@@ -169,7 +169,7 @@ void Gracz::Do_While(int& i, int& n, int maska[100], Gracz* gracze, int& sa_spol
         }
         if (zgadl)
         {
-            gracze->Kasa(gracze, kolejka) += kwota * zgadl;
+            gracze[kolejka] += (kwota*zgadl);
             cout << gracze[kolejka];
         }
         else {
@@ -245,6 +245,12 @@ Gracz& Gracz::operator=(const string& s)
 {
     this->imie = s;
     return *this;
+}
+
+int& Gracz::operator+=(int x)
+{
+    this->kasa += x;
+    return this->kasa;
 }
 
 //

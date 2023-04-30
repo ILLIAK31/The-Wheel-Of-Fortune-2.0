@@ -25,5 +25,6 @@ public:
     friend ostream& operator<<(ostream& output, string rezultat);
     bool operator==(int x);
     Gracz& operator=(const string& s);
+    int& operator+=(int x);
     //
 };
