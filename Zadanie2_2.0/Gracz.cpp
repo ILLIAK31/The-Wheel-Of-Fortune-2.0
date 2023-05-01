@@ -120,7 +120,7 @@ void Gracz::Do_While(int& i, int& n, int maska[100], Gracz* gracze, int& sa_spol
                 c = toupper(c);
             if (gracze->Haslo(gracze) == proba) {
                 cout << endl << " !!!!!!!!!! =======   WYGRANA ========== !!!!!!!!!!!!!" << endl;
-                gracze->Portfel(gracze, kolejka) += gracze->Kasa(gracze, kolejka);
+                ++gracze[kolejka];
                 break;
             }
             else
@@ -251,6 +251,12 @@ int& Gracz::operator+=(int x)
 {
     this->kasa += x;
     return this->kasa;
+}
+
+Gracz& Gracz::operator++()
+{
+    this->portfel += this->kasa;
+    return  *this;
 }
 
 //
