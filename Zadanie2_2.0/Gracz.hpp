@@ -22,7 +22,6 @@ public:
     char WczytajZnak();
     char WczytajWybor(Gracz* gracze);
     friend ostream& operator<<(ostream& output, const Gracz& gracze);
-    friend ostream& operator<<(ostream& output, string rezultat);
     bool operator==(int x);
     Gracz& operator=(const string& s);
     int& operator+=(int x);
