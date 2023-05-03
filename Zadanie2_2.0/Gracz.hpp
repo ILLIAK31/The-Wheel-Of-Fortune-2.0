@@ -27,5 +27,4 @@ public:
     Gracz& operator=(const string& s);
     int& operator+=(int x);
     Gracz& operator++();
-    //
 };

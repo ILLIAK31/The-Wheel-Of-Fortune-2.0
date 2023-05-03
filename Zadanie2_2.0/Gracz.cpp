@@ -258,5 +258,3 @@ Gracz& Gracz::operator++()
     this->portfel += this->kasa;
     return  *this;
 }
-
-//
