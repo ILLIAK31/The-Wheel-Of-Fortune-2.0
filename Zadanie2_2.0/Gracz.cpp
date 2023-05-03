@@ -169,7 +169,9 @@ void Gracz::Do_While(int& i, int& n, int maska[100], Gracz* gracze, int& sa_spol
         }
         if (zgadl)
         {
+            cout << kwota << endl <<gracze[kolejka].kasa << endl;
             gracze[kolejka] += (kwota*zgadl);
+            cout << kwota << endl <<gracze[kolejka].kasa << endl;
             cout << gracze[kolejka];
         }
         else {
